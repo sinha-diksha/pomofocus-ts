@@ -1,9 +1,4 @@
-interface TagProps {
-  val: string;
-  index: number;
-  onTagClicked: (index: number) => void;
-  activeTag: number;
-}
+import { TagProps } from "../interfaces";
 
 import styles from "./Tag.module.css";
 const Tag = ({ val, index, onTagClicked, activeTag }: TagProps) => {
