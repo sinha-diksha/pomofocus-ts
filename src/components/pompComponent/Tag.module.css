@@ -1,0 +1,36 @@
+.btn {
+  all: unset;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  font-weight: normal;
+  transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+/* Active tag styles */
+.activeTag {
+  background-color: rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+/* Default (inactive) tag styles */
+.inactiveTag {
+  background-color: transparent;
+  font-weight: normal;
+}
+@media screen and (max-width: 768px) {
+  .btn {
+    font-size: 16px; /* Slightly larger font size for tablets */
+    padding: 10px 20px; /* Larger padding for a more spacious button */
+  }
+}
+
+/* Responsive for smaller screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .btn {
+    font-size: 10px; /* Default font size for very small screens */
+    padding: 8px 16px; /* Default padding */
+  }
+}

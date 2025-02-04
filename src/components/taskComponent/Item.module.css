@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  width: 78%;
+  justify-content: space-between;
+  margin: 8px 0px;
+  background-color: white;
+  color: rgb(85, 85, 85);
+  height: 40px;
+  align-items: center;
+  padding: 0px 7px;
+  border-radius: 5px;
+}
+
+.deleteBtn {
+  height: 30px;
+
+  background-color: rgb(231, 225, 225);
+  border: none;
+  border-radius: 5px;
+  color: rgb(85, 85, 85);
+  width: 80px;
+  font-size: 15px;
+}
+
+.completed {
+  text-decoration: line-through;
+  text-decoration-color: rgb(70, 69, 69);
+}
+
+.itemText {
+  padding: 5px;
+  margin-top: 1px !important;
+}

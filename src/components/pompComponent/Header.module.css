@@ -1,0 +1,151 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px; /* Adjust spacing between buttons */
+}
+
+.Heading {
+  font-size: 20px;
+  display: flex;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.tick {
+  height: 20px;
+  padding: 2px;
+}
+.mybtn {
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  color: white;
+  all: unset;
+  font-size: 12px;
+  height: 32px;
+  padding: 0px 8px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.myIcon {
+  margin: 0 3px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle; /* helps align icon with text */
+}
+.ThreeDots {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.dot {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 32px;
+  border-radius: 5px;
+}
+
+.buttonDiv {
+  font-size: 13;
+}
+
+@media screen and (max-width: 768px) {
+  /* For tablets and smaller screens */
+  .Heading {
+    font-size: 18px; /* Adjust heading size for smaller screens */
+  }
+
+  .btn {
+    font-size: 10px; /* Smaller font size for buttons */
+    padding: 0px 6px; /* Adjust padding for buttons */
+  }
+
+  .buttonContainer {
+    gap: 8px; /* Reduce the space between buttons */
+  }
+
+  .myIcon {
+    width: 18px;
+    height: 18px; /* Adjust icon size */
+  }
+
+  .ThreeDots {
+    height: 28px; /* Adjust height for smaller screens */
+  }
+
+  .dot {
+    width: 30px; /* Adjust size of the dot */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* For mobile screens */
+  .Heading {
+    font-size: 16px; /* Even smaller heading size */
+    gap: 2px; /* Reduce the gap between text and icon */
+  }
+
+  .btn {
+    font-size: 9px; /* Make buttons smaller */
+    padding: 0px 5px; /* Adjust padding for smaller buttons */
+  }
+
+  .buttonContainer {
+    gap: 6px; /* Further reduce button gap */
+  }
+
+  .myIcon {
+    width: 16px;
+    height: 16px; /* Further reduce icon size */
+  }
+
+  .ThreeDots {
+    height: 26px; /* Reduce height for mobile screens */
+  }
+
+  .dot {
+    width: 28px; /* Adjust dot size */
+  }
+
+  .tick {
+    display: none; /* Hide the tick on small screens */
+  }
+
+  .buttonDiv {
+    font-size: 11px; /* Reduce font size of button text */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* For very small screens (phones in portrait mode) */
+  .Heading {
+    font-size: 14px; /* Make heading smaller for tiny screens */
+  }
+
+  .btn {
+    font-size: 5px; /* Make buttons even smaller */
+    padding: 0px 4px; /* Adjust button padding for small screens */
+  }
+
+  .myIcon {
+    width: 14px;
+    height: 14px; /* Further reduce icon size */
+  }
+
+  .ThreeDots {
+    height: 24px; /* Even smaller ThreeDots icon */
+  }
+
+  .dot {
+    width: 24px; /* Make dot smaller */
+  }
+}
