@@ -1,6 +1,6 @@
 import "./App.css";
-import Header from "./components/pompComponent/Header";
-import Timer from "./components/pompComponent/Timer";
+import Header from "./components/pomoComponent/Header";
+import Timer from "./components/pomoComponent/Timer";
 
 import Tasks from "./components/taskComponent/Tasks";
 import { StateProvider } from "./store/StateProvider";
