@@ -13,7 +13,7 @@ const Timer = () => {
 
       return () => clearInterval(interval);
     }
-  }, [time, isActive]);
+  }, [time, isActive, setTime]);
 
   const getTitle = () => {
     switch (activeTag) {

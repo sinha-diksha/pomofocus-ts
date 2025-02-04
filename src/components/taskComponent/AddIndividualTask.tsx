@@ -4,16 +4,17 @@ import { useTodos } from "../../store/StateProvider";
 
 const AddIndividualTask = () => {
   const { AddTodoItems, handleCancelClick, isOpen } = useTodos();
+  const todoItem = useRef<HTMLInputElement>(null);
   if (!isOpen) {
     return null;
   }
 
-  const todoItem = useRef<HTMLInputElement>(null);
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleTodoNameChange();
     }
   };
+
   const handleTodoNameChange = () => {
     if (todoItem.current) {
       const todoName = todoItem.current.value;

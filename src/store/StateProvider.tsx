@@ -5,7 +5,6 @@ import React, {
   useEffect,
   useState,
 } from "react";
-// Ensure you have the correct path to the CSS module
 export type TodosProviderProps = {
   children: ReactNode;
 };
@@ -46,9 +45,6 @@ export const StateProvider = ({ children }: TodosProviderProps) => {
   const [isActive, setIsActive] = useState(false);
   const [todoItems, setTodoItems] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-
-  // const pomodoroTimerElement = document.querySelector(".pomodoroTimer");
-
   const AddTodoItems = (itemName: string) => {
     const newItems = [...todoItems, itemName];
     setTodoItems(newItems);
@@ -71,17 +67,16 @@ export const StateProvider = ({ children }: TodosProviderProps) => {
       case 0:
         setTime(workTime);
         document.body.style.backgroundColor = "rgb(186,73,73)";
-        // pomodoroTimerElement.style.backgroundColor = "#e37a86";
+
         break;
       case 1:
         setTime(shortBreakTime);
         document.body.style.backgroundColor = "rgb(56, 133, 138)";
-        // pomodoroTimerElement.style.backgroundColor = "#abdbe3";
+
         break;
       case 2:
         setTime(longBreakTime);
         document.body.style.backgroundColor = "rgb(57, 112, 151)";
-        // pomodoroTimerElement.style.backgroundColor = "rgba(24,132,181,255";
         break;
     }
   }, [activeTag]);
