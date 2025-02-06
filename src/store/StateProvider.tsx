@@ -2,26 +2,27 @@ import React, {
   ReactNode,
   createContext,
   useContext,
-  useEffect,
   useState,
+  useEffect,
 } from "react";
+
 export type TodosProviderProps = {
   children: ReactNode;
 };
 
+export enum TimerMode {
+  POMODORO = "pomodoro",
+  SHORT = "shortbreak",
+  LONG = "longbreak",
+}
+
 export type TodosContext = {
-  activeTag: number;
-  setActiveTag: React.Dispatch<React.SetStateAction<number>>;
+  activeTag: TimerMode;
+  setActiveTag: React.Dispatch<React.SetStateAction<TimerMode>>;
   time: number;
   setTime: React.Dispatch<React.SetStateAction<number>>;
   isActive: boolean;
   setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
-  workTime: number;
-  setWorkTime: React.Dispatch<React.SetStateAction<number>>;
-  shortBreakTime: number;
-  setShortBreakTime: React.Dispatch<React.SetStateAction<number>>;
-  longBreakTime: number;
-  setlongBreakTime: React.Dispatch<React.SetStateAction<number>>;
   todoItems: string[];
   setTodoItems: React.Dispatch<React.SetStateAction<string[]>>;
   isOpen: boolean;
@@ -35,16 +36,12 @@ export type TodosContext = {
 export const StateContext = createContext<TodosContext | null>(null);
 
 export const StateProvider = ({ children }: TodosProviderProps) => {
-  const [workTime, setWorkTime] = useState<number>(25 * 60);
-  const [shortBreakTime, setShortBreakTime] = useState<number>(5 * 60);
-  const [longBreakTime, setlongBreakTime] = useState<number>(15 * 60);
-
-  const [activeTag, setActiveTag] = useState(0);
+  const [activeTag, setActiveTag] = useState<TimerMode>(TimerMode.POMODORO);
   const [time, setTime] = useState(25 * 60);
-
   const [isActive, setIsActive] = useState(false);
   const [todoItems, setTodoItems] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+
   const AddTodoItems = (itemName: string) => {
     const newItems = [...todoItems, itemName];
     setTodoItems(newItems);
@@ -61,25 +58,20 @@ export const StateProvider = ({ children }: TodosProviderProps) => {
   const handleCancelClick = () => {
     setIsOpen(false);
   };
-
   useEffect(() => {
     switch (activeTag) {
-      case 0:
-        setTime(workTime);
-        document.body.style.backgroundColor = "rgb(186,73,73)";
-
+      case TimerMode.POMODORO:
+        setTime(25 * 60);
         break;
-      case 1:
-        setTime(shortBreakTime);
-        document.body.style.backgroundColor = "rgb(56, 133, 138)";
-
+      case TimerMode.SHORT:
+        setTime(5 * 60);
         break;
-      case 2:
-        setTime(longBreakTime);
-        document.body.style.backgroundColor = "rgb(57, 112, 151)";
+      case TimerMode.LONG:
+        setTime(15 * 60);
         break;
     }
-  }, [activeTag]);
+  }, [activeTag, setTime]);
+
   return (
     <StateContext.Provider
       value={{
@@ -89,17 +81,10 @@ export const StateProvider = ({ children }: TodosProviderProps) => {
         setTime,
         isActive,
         setIsActive,
-        workTime,
-        setWorkTime,
-        shortBreakTime,
-        setShortBreakTime,
-        longBreakTime,
-        setlongBreakTime,
         todoItems,
         setTodoItems,
         isOpen,
         setIsOpen,
-
         deleteTodoItems,
         AddTodoItems,
         handleAddClick,

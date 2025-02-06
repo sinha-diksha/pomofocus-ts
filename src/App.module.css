@@ -1,0 +1,50 @@
+html,
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+:root {
+  --pomodoro-color: rgb(186, 73, 73);
+  --shortbreak-color: rgb(56, 133, 138);
+  --longbreak-color: rgb(57, 112, 151);
+}
+
+.parentDiv {
+  min-height: 100vh;
+  background-color: var(--pomodoro-color);
+  transition: background-color 0.5s ease-in-out;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.pomodoro {
+  background-color: var(--pomodoro-color);
+}
+
+.shortbreak {
+  background-color: var(--shortbreak-color);
+}
+
+.longbreak {
+  background-color: var(--longbreak-color);
+}
+
+.container {
+  margin: 30px 0 10px;
+  width: 600px;
+}
+
+@media (max-width: 480px) {
+  .parentDiv {
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+}

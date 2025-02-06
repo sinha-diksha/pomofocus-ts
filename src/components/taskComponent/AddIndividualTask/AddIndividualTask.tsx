@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import styles from "./AddIndividualTask.module.css";
-import { useTodos } from "../../store/StateProvider";
-
+import { useTodos } from "../../../store/StateProvider";
 const AddIndividualTask = () => {
   const { AddTodoItems, handleCancelClick, isOpen } = useTodos();
   const todoItem = useRef<HTMLInputElement>(null);

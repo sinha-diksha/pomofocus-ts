@@ -1,10 +1,32 @@
 import { useEffect } from "react";
 import styles from "./Timer.module.css";
-import Tags from "./Tags";
-import { useTodos } from "../../store/StateProvider";
+import Tags from "../Tags/Tags";
+import { TimerMode, useTodos } from "../../../store/StateProvider";
+
+interface TimerConfig {
+  buttonClass: string;
+  initialTime: number;
+}
+
+const TIMER_CONFIG: Record<TimerMode, TimerConfig> = {
+  [TimerMode.POMODORO]: {
+    buttonClass: styles.pomodoroButton,
+    initialTime: 25 * 60,
+  },
+  [TimerMode.SHORT]: {
+    buttonClass: styles.shortBreakButton,
+    initialTime: 5*60,
+  },
+  [TimerMode.LONG]: {
+    buttonClass: styles.longBreakButton,
+    initialTime: 15 * 60,
+  },
+};
 
 const Timer = () => {
   const { time, setTime, isActive, setIsActive, activeTag } = useTodos();
+
+  const currentConfig = TIMER_CONFIG[activeTag];
   useEffect(() => {
     if (isActive && time > 0) {
       const interval = setInterval(() => {
@@ -13,44 +35,20 @@ const Timer = () => {
 
       return () => clearInterval(interval);
     }
-  }, [time, isActive, setTime]);
-
-  const getTitle = () => {
-    switch (activeTag) {
-      case 0:
-        return "Pomodoro";
-      case 1:
-        return "Short Break";
-      case 2:
-        return "Long Break";
-      default:
-        return "Pomodoro Timer";
+    if (time === 0) {
+      setTime(currentConfig.initialTime);
+      setIsActive(false);
     }
-  };
+  }, [time, isActive, setTime, currentConfig.initialTime]);
 
   const getTime = (time: number): string => {
     const min = Math.floor(time / 60);
     const sec = time % 60;
-    const timeString = `${min < 10 ? "0" + min : min}:${
-      sec < 10 ? "0" + sec : sec
-    }`;
-    document.title = `${timeString} - ${getTitle()}`;
     return `${min < 10 ? "0" + min : min}:${sec < 10 ? "0" + sec : sec}`;
   };
 
   const toggleButton = () => {
     setIsActive(!isActive);
-  };
-
-  const handleColorChange = () => {
-    switch (activeTag) {
-      case 0:
-        return "rgb(186,73,73)";
-      case 1:
-        return "rgb(56, 133, 138)";
-      case 2:
-        return "rgb(57, 112, 151)";
-    }
   };
   return (
     <div className={styles.pomodoroTimer}>
@@ -59,12 +57,8 @@ const Timer = () => {
       </div>
       <div className={styles.timerDisplay}>{getTime(time)}</div>
       <button
-        className={styles.timerButton}
+        className={`${styles.timerButton} ${currentConfig.buttonClass}`}
         onClick={toggleButton}
-        style={{
-          color: handleColorChange(),
-          transition: "color 0.5s ease-in-out",
-        }}
       >
         {isActive ? "PAUSE" : "START"}
       </button>

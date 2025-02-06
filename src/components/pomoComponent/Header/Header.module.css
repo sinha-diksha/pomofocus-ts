@@ -1,0 +1,145 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.Heading {
+  font-size: 20px;
+  display: flex;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.tick {
+  height: 20px;
+  padding: 2px;
+}
+.mybtn {
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  color: white;
+  all: unset;
+  font-size: 12px;
+  height: 32px;
+  padding: 0px 8px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.myIcon {
+  margin: 0 3px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.ThreeDots {
+  padding-top: 8px;
+  padding-left: 8px;
+  border-radius: 5px;
+}
+
+.dot {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 32px;
+  border-radius: 5px;
+}
+
+.buttonDiv {
+  font-size: 13;
+}
+
+@media screen and (max-width: 768px) {
+  .Heading {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 10px;
+    padding: 0px 6px;
+  }
+
+  .buttonContainer {
+    gap: 8px;
+  }
+
+  .myIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ThreeDots {
+    height: 28px;
+  }
+
+  .dot {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Heading {
+    font-size: 16px;
+    gap: 2px;
+  }
+
+  .btn {
+    font-size: 9px;
+    padding: 0px 5px;
+  }
+
+  .buttonContainer {
+    gap: 6px;
+  }
+
+  .myIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ThreeDots {
+    height: 26px;
+  }
+
+  .dot {
+    width: 28px;
+  }
+
+  .tick {
+    display: none;
+  }
+
+  .buttonDiv {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Heading {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 5px;
+    padding: 0px 4px;
+  }
+
+  .myIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ThreeDots {
+    height: 24px;
+  }
+
+  .dot {
+    width: 24px;
+  }
+}

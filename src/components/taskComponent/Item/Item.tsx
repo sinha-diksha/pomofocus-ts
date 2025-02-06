@@ -1,8 +1,7 @@
 import styles from "./Item.module.css";
-import { useTodos } from "../../store/StateProvider";
+import { useTodos } from "../../../store/StateProvider";
 import { useState } from "react";
-
-import { ItemProps } from "../interfaces";
+import { ItemProps } from "../../interfaces";
 
 const Item = ({ item }: ItemProps) => {
   const { deleteTodoItems } = useTodos();

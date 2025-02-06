@@ -1,0 +1,29 @@
+.btn {
+  all: unset;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  font-weight: normal;
+  transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.activeTag {
+  background-color: rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+}

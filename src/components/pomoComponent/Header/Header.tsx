@@ -11,16 +11,13 @@ const Header = () => {
       </div>
       <div className={styles.mybtn}>
         <button className={styles.btn}>
-          {/* <VscGraph className={styles.myIcon} size={12} /> */}
           <span className={styles.buttonDiv}>Report</span>
         </button>
         <button className={styles.btn}>
-          {/* <IoIosSettings className={styles.myIcon} size={12} /> */}
           <span className={styles.buttonDiv}>Setting</span>
         </button>
 
         <button className={styles.btn}>
-          {/* <CiLogin className={styles.myIcon} size={12} /> */}
           <span className={styles.buttonDiv}>Sign in</span>
         </button>
         <div className={styles.dot}>

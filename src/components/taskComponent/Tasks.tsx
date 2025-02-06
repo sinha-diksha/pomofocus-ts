@@ -1,6 +1,6 @@
-import AddTodo from "./AddTodo";
-import TodoHead from "./TodoHead";
-import AddIndividualTask from "./AddIndividualTask";
+import AddTodo from "./AddTodo/AddTodo";
+import TodoHead from "./TodoHead/TodoHead";
+import AddIndividualTask from "./AddIndividualTask/AddIndividualTask";
 
 import TodoItems from "./TodoItems";
 

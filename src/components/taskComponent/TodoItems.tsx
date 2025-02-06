@@ -1,4 +1,4 @@
-import Item from "./Item";
+import Item from "./Item/Item";
 import { useTodos } from "../../store/StateProvider";
 
 const TodoItems = () => {

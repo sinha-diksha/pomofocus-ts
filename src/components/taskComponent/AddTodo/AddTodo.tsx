@@ -1,6 +1,6 @@
 import styles from "./AddTodo.module.css";
 import { IoMdAddCircle } from "react-icons/io";
-import { useTodos } from "../../store/StateProvider";
+import { useTodos } from "../../../store/StateProvider";
 const AddTodo = () => {
   const { handleAddClick } = useTodos();
   return (

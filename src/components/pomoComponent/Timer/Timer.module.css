@@ -32,13 +32,26 @@
   border: none;
   border-radius: 2px;
   background-color: #fff;
-  color: #e94f60;
+  color: rgb(186, 73, 73);
   cursor: pointer;
   margin-bottom: 30px;
   width: 200px;
   box-shadow: rgb(235, 235, 235) 0px 6px 0px;
   font-weight: bold;
   font-size: 22px;
+  transition: color 0.5s ease-in-out;
+}
+
+.pomodoroButton {
+  color: rgb(186, 73, 73);
+}
+
+.shortBreakButton {
+  color: rgb(56, 133, 138);
+}
+
+.longBreakButton {
+  color: rgb(57, 112, 151);
 }
 
 .timerDisplay {

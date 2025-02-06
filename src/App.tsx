@@ -1,19 +1,20 @@
-import "./App.css";
-import Header from "./components/pomoComponent/Header";
-import Timer from "./components/pomoComponent/Timer";
-
+import Header from "./components/pomoComponent/Header/Header";
+import Timer from "./components/pomoComponent/Timer/Timer";
 import Tasks from "./components/taskComponent/Tasks";
-import { StateProvider } from "./store/StateProvider";
+import { useTodos } from "./store/StateProvider";
+import styles from "./App.module.css";
 
 function App() {
+  const { activeTag } = useTodos();
+
   return (
-    <center className="container">
-      <StateProvider>
+    <div className={`${styles.parentDiv} ${styles[activeTag]}`}>
+      <div className={styles.container}>
         <Header />
         <Timer />
         <Tasks />
-      </StateProvider>
-    </center>
+      </div>
+    </div>
   );
 }
 
